@@ -50,9 +50,13 @@ app.use('/api/v1/admin', require('./routes/superuser.route'));
 // route for company
 app.use('/api/v1/company', require('./routes/company.route'));
 
+// Root route to check if server is running
+app.get('/', (req, res) => {
+  res.send('College Placement Management System Backend is running!');
+});
 
 // Start the server
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
