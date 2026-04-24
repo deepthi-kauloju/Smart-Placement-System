@@ -1,0 +1,425 @@
+﻿/* tailwind css  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.dancing {
+  font-family: "Dancing Script", cursive;
+}
+
+.playfair {
+  font-family: "Playfair Display", serif;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #F4F6F9;
+  color: #0f172a;
+}
+
+:root {
+  --page-bg: #eef2f7;
+  --page-surface: #ffffff;
+  --page-surface-strong: rgba(255, 255, 255, 0.92);
+  --page-border: rgba(148, 163, 184, 0.28);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --brand-primary: #1d4ed8;
+  --brand-primary-strong: #1e3a8a;
+  --brand-accent: #0f766e;
+  --danger: #dc2626;
+  --dashboard-bg:
+    radial-gradient(circle at top left, rgba(29, 78, 216, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(16, 185, 129, 0.1), transparent 30%),
+    linear-gradient(145deg, #f8fafc 0%, #edf3f8 50%, #e2e8f0 100%);
+  --dashboard-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+  --auth-bg:
+    radial-gradient(circle at top left, rgba(29, 78, 216, 0.22), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(15, 118, 110, 0.18), transparent 35%),
+    linear-gradient(145deg, #dbe7f4 0%, #edf3f8 45%, #cfdceb 100%);
+  --auth-shadow: 0 28px 80px rgba(15, 23, 42, 0.18);
+}
+
+.dashboard-shell {
+  min-height: 100vh;
+  background: var(--dashboard-bg);
+}
+
+.dashboard-content {
+  color: var(--text-primary);
+}
+
+.dashboard-page-header {
+  margin-bottom: 1.5rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(18px);
+}
+
+.dashboard-title {
+  color: var(--text-primary);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.dashboard-kicker {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.dashboard-card {
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: var(--dashboard-shadow);
+  backdrop-filter: blur(18px);
+}
+
+.dashboard-table {
+  border-collapse: separate !important;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 1rem;
+  box-shadow: var(--dashboard-shadow);
+}
+
+.dashboard-table thead th {
+  border: 0 !important;
+  background: #f8fafc !important;
+  color: #334155;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 1rem !important;
+  text-transform: uppercase;
+}
+
+.dashboard-table tbody td {
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  color: #334155;
+  padding: 0.95rem 1rem !important;
+  vertical-align: middle;
+}
+
+.dashboard-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.dashboard-table tbody tr:hover {
+  background: rgba(239, 246, 255, 0.68) !important;
+}
+
+.dashboard-table-link {
+  color: var(--brand-primary-strong);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.dashboard-table-link:hover {
+  color: var(--brand-primary);
+}
+
+.dashboard-section-title {
+  color: var(--text-primary);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.dashboard-info-label {
+  color: #475569;
+  font-weight: 800;
+}
+
+.dashboard-info-value {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.dashboard-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.accordion.dashboard-accordion,
+.dashboard-accordion .accordion-item {
+  border: 0;
+  background: transparent;
+}
+
+.dashboard-accordion .accordion-item {
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 1rem !important;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--dashboard-shadow);
+}
+
+.dashboard-accordion .accordion-button {
+  background: rgba(248, 250, 252, 0.9);
+  color: #0f172a;
+  font-weight: 800;
+  box-shadow: none;
+}
+
+.dashboard-accordion .accordion-button:not(.collapsed) {
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  background: var(--auth-bg);
+  position: relative;
+  overflow: hidden;
+}
+.auth-back {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--text-primary);
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.auth-back:hover {
+  background: rgba(255, 255, 255, 0.96);
+  transform: translateY(-1px);
+}
+
+.auth-shell::before,
+.auth-shell::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.auth-shell::before {
+  width: 20rem;
+  height: 20rem;
+  top: -6rem;
+  right: -4rem;
+  background: rgba(30, 64, 175, 0.14);
+}
+
+.auth-shell::after {
+  width: 16rem;
+  height: 16rem;
+  bottom: -4rem;
+  left: -3rem;
+  background: rgba(13, 148, 136, 0.12);
+}
+
+.auth-card {
+  position: relative;
+  z-index: 1;
+  background: var(--page-surface-strong);
+  border: 1px solid var(--page-border);
+  box-shadow: var(--auth-shadow);
+  color: var(--text-primary);
+}
+
+.auth-title {
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.auth-subtext {
+  color: var(--text-secondary);
+}
+
+.auth-link {
+  color: var(--brand-primary-strong);
+  font-weight: 700;
+}
+
+.auth-link:hover {
+  color: var(--brand-primary);
+}
+
+.auth-input,
+.auth-input:focus {
+  background-color: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  color: var(--text-primary);
+  box-shadow: none;
+}
+
+.auth-input::placeholder {
+  color: var(--text-muted);
+}
+
+.auth-input:focus {
+  border-color: rgba(29, 78, 216, 0.8);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
+}
+
+.auth-submit {
+  min-width: 9rem;
+  border: none;
+  background: linear-gradient(135deg, var(--brand-primary-strong), var(--brand-primary));
+  box-shadow: 0 10px 24px rgba(29, 78, 216, 0.22);
+}
+
+.auth-submit:hover,
+.auth-submit:focus,
+.auth-submit:active {
+  background: linear-gradient(135deg, #1e40af, #2563eb) !important;
+}
+
+.auth-eye {
+  color: var(--text-secondary);
+}
+
+.auth-password-input {
+  padding-right: 2.75rem;
+}
+
+.auth-eye-button {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 0.2rem;
+  line-height: 1;
+}
+
+.auth-eye-button:hover,
+.auth-eye-button:focus {
+  color: var(--text-primary);
+  outline: none;
+}
+
+.auth-copyright {
+  color: var(--text-muted) !important;
+}
+
+/* custom sidebar scroll bar  */
+
+/* Initially hide the scrollbar */
+.sidebar-nav::-webkit-scrollbar {
+  width: 0;
+  /* Set width to 0 to hide the scrollbar */
+  height: 0;
+  /* For horizontal scrollbar, if any */
+}
+
+/* On hover or scroll, show the scrollbar */
+.sidebar-nav:hover::-webkit-scrollbar {
+  width: 4px;
+  /* Adjust the width when visible */
+  height: 4px;
+  /* For horizontal scrollbar, if any */
+}
+
+/* Track */
+.sidebar-nav::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.sidebar-nav::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* custom sidebar scroll bar  */
+
+
+/* input type number disable arrow  */
+/* Hide the arrows for number input in Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide the arrows for number input in Firefox */
+/* input[type=number] {
+  -moz-appearance: textfield;
+} */
+
+/* input type number disable arrow  */
+
+
+/* Sidebar content remains visible */
+.sidebar-content {
+  scrollbar-width: none;
+  /* For Firefox */
+}
+
+.sidebar-content::-webkit-scrollbar {
+  width: 0;
+  /* For Webkit (Chrome, Safari) */
+  transition: width 0.3s ease;
+  /* Add transition for smooth scrollbar visibility */
+}
+
+/* Show scrollbar only on hover */
+.navbar-container:hover .sidebar-content::-webkit-scrollbar {
+  width: 8px;
+  /* Show the scrollbar when hovered */
+}
+
+.navbar-container:hover .sidebar-content {
+  scrollbar-width: thin;
+  /* Show scrollbar for Firefox on hover */
+}
+
+/* Customize scrollbar thumb */
+.sidebar-content::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* Scrollbar color */
+  border-radius: 10px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+  /* Darker scrollbar color on hover */
+}
+
